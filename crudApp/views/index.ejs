@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <link href = '/css/style.css' rel = 'stylesheet' type = 'text/css'>
+ <title>Tissues 4 your Issues</title>
+</head>
+  <body>
+
+      <ul class="issues">
+      <% for(var i=0; i<issues.length; i++) {%>
+        <li class="issues">
+          <span><%= issues[i]._id %></span></br>
+          <span><%= issues[i].title %></span></br>
+          <span><%= issues[i].status %></span></br>
+          <span><%= issues[i].assignee %></span></br>
+          <span><%= issues[i].created %></span></br>
+          <span><%= issues[i].updated %></span></br>
+          <span><%= issues[i].details %></span></br>
+        </li>
+       <% } %>
+     </ul>
+    <form action="/issue" method="POST" id = 'form'>
+       <input type="text" placeholder="ID" name="id"><br>
+       <input type="text" placeholder="Title" name="title"><br>
+       <input type="text" placeholder="Status" name="status"><br>
+       <input type="text" placeholder="Assignee" name="assignee"><br>
+       <input type="text" placeholder="Created" name="created"><br>
+       <input type="text" placeholder="Updated" name="updated"><br>
+       <input type="text" placeholder="details" name="details"><br>
+       <button id = 'update'>Update</button>
+       <button id = 'delete'>delete</button>
+    </form>
+    <scripts src = 'main.js'></scripts>
+  </body>
+</html>
