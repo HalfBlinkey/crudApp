@@ -29,7 +29,6 @@ function createIssue(id, title, status, assignee, created, updated, details){
  }
 
 //function to update an issue
-https://www.w3schools.com/nodejs/nodejs_mongodb_update.asp
 function updateIssue(id, title, status, assignee, created, updated, details){
 	var dbo = db.db("tissue");
 	dbo.collection("issues").findOneAndUpdate({ "id": id }, { "$set": { "title": title, "status": status, "assignee": assignee, "created": created, "updated": updated, "details": details}
